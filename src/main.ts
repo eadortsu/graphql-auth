@@ -1,8 +1,18 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { Logger } from '@nestjs/common';
+import { utils } from './utils';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+  app.enableCors();
+  await app.listen(process.env.SERVER_PORT || 3000);
+  Logger.log(
+    `Server Running on http://localhost:${process.env.SERVER_PORT}/graphql`,
+    'Bootstrap',
+  );
 }
-bootstrap();
+
+bootstrap()
+  .then(() => Logger.log(utils.eadortsu(), 'Eadortsu'))
+  .catch((e) => Logger.log(e, 'Server Error'));

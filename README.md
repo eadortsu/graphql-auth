@@ -49,7 +49,7 @@ Introduce your projects by taking a screenshot, video recordings or a gif. Try t
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [Nest.js](https://nestjs.com/)
-- [Vue.js](https://vuejs.org/)
+- [Nuxt.js](https://nuxtjs.org/)
 - [Vuetify](https://vuetifyjs.com/en/)
 
 ## Features
@@ -62,15 +62,36 @@ What features did you develop?
 
 <!-- Example: -->
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com)
+and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com))
+or [yarn](https://yarnpkg.com/) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/eadortsu/graphql-auth
 
 # Install dependencies
-$ npm install
+$ yarn install
 
 # Run the app
-$ npm start
+$ yarn start
+
+# development
+$ yarn dev
+
+# production mode
+$ yarn start:prod
+```
+
+## Test
+
+```bash
+# unit tests
+$ yarn test
+
+# e2e tests
+$ yarn test:e2e
+
+# test coverage
+$ yarn test:cov
 ```
