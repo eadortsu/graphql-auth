@@ -41,7 +41,7 @@
 
 ## Overview
 
-![screenshot](https://auth-6c8y2ojar-eadortsu.vercel.app/demo.gif)
+![screenshot](https://raw.githubusercontent.com/eadortsu/auth-app/main/static/demo.gif)
 
 Introduce your projects by taking a screenshot, video recordings or a gif. Try to tell us about the solution you built
 by answering the following:
