@@ -4,6 +4,7 @@ import { User } from './entities/user.entity';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { SignUpInput } from '../auth/dto/sign-up-input.dto';
+import * as bcryptjs from 'bcryptjs';
 
 @Injectable()
 export class UserService {
@@ -26,6 +27,14 @@ export class UserService {
   }
 
   async update(id: string, updateUserInput: UpdateUserInput) {
+    if (updateUserInput.password) {
+      updateUserInput.password = await bcryptjs.hash(
+        updateUserInput.password,
+        10,
+      );
+    } else {
+      delete updateUserInput.password;
+    }
     const existingUser = await this.userModel
       .findOneAndUpdate({ _id: id }, { $set: updateUserInput }, { new: true })
       .exec();

@@ -48,12 +48,6 @@ export class AuthService {
     if (emailExists) {
       throw Error('Email is already in use');
     }
-    const phoneExists = await this.userService.findOne({
-      phone: signUpInput.phone,
-    });
-    if (phoneExists) {
-      throw Error('Phone number is already in use');
-    }
     signUpInput.password = await bcryptjs.hash(signUpInput.password, 10);
     let user = await this.userService.create(signUpInput);
     user = await this.userService.update(user._id, {

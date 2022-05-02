@@ -92,6 +92,7 @@ type Mutation {
 
 input UpdateUserInput {
   name: String
+  username: String
   bio: String
   email: String
   phone: String
@@ -111,6 +112,7 @@ input LoginInput {
 
 input SignUpInput {
   name: String
+  username: String
   bio: String
   email: String!
   phone: String
